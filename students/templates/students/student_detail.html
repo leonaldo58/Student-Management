@@ -1,0 +1,9 @@
+<h1>{{ student.name}}</h1>
+<p>Email: {{ student.email }}</p>
+<p>Age: {{ student.age }}</p>
+<a href="{% url 'student_edit' student.pk %}"Edit></a>
+<form method="post" action="{% url 'student_delete' student.pk %}">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+</form>
+<a href="{% url 'student_list' %}">Back to List</a>
